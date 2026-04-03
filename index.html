@@ -188,7 +188,8 @@ footer ul li a:hover{color:#fff;}
 <!-- ══════ HEADER ══════ -->
 <header>
   <a href="#" class="logo-wrap">
-    <div class="logo-icon">🐂</div>
+  <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/image__1_-removebg-preview%20(1).png" 
+     alt="Rústicos Nobre" style="height:105px; width:auto;">
     <div class="logo-text">Rústicos Nobre<span>Arte rural esculpida à mão</span></div>
   </a>
 
@@ -205,11 +206,27 @@ footer ul li a:hover{color:#fff;}
     </li>
     <li><a href="#equipe">Equipe</a></li>
     <li><a href="#sobre">Sobre</a></li>
-    <li><a href="https://wa.me/5500000000000">Suporte</a></li>
+    <li><a href="https://wa.link/zdxqdm">Suporte</a></li>
   </ul>
 
   <div class="header-right">
-    <a href="https://wa.me/5500000000000" class="btn-comprar">Comprar Agora</a>
+   <button onclick="mostrarOpcoesCompra()" class="btn-comprar" style="position:relative;">Comprar Agora</button>
+
+<!-- Menu corrigido -->
+<div id="opcoesCompra" style="display:none; position:absolute; top:100%; right:0; background:#fff; border:1px solid #ddd; border-radius:12px; padding:10px 0; box-shadow:0 8px 25px rgba(0,0,0,0.2); z-index:9999; min-width:260px; margin-top:6px;">
+  
+  <a href="https://br.shp.ee/97mQxAze" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600; border-bottom:1px solid #f0f0f0;">🛒 Comprar Boi na Shopee</a>
+  
+  <a href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/boi-mija-pinga-1468488840?utm_medium=shared_link&utm_source=direct" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600; border-bottom:1px solid #f0f0f0;">📦 Comprar Boi na OLX</a>
+  
+  <a href="https://br.shp.ee/49J4joY" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600; border-bottom:1px solid #f0f0f0;">🐐 Comprar Cabrita na Shopee</a>
+  
+  <a href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/cabrita-mija-pinga-1470220635?utm_medium=shared_link&utm_source=direct" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600; border-bottom:1px solid #f0f0f0;">🐐 Comprar Cabrita na OLX</a>
+  
+  <a href="https://wa.link/zdxqdm" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600; border-bottom:1px solid #f0f0f0;">💬 Falar no WhatsApp</a>
+  
+  <a href="https://wa.me/351939799936?text=Minha%20chave%20Pix%20%C3%A9%3A%20xtreambr@gmail.com" target="_blank" style="display:block; padding:14px 20px; color:#222; text-decoration:none; font-weight:600;">💰 Pagar com Pix</a>
+</div>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </header>
@@ -233,11 +250,53 @@ footer ul li a:hover{color:#fff;}
 <section class="hero-banner">
   <div class="hero-text">
     <span class="tag">Rústicos Nobre apresenta</span>
-    <h2>Nova Coleção de Cavalos<br>Produzidas especialmente<br>pela Rústicos Nobre!</h2>
+    <h2>Nova Coleção de Bois, Cabritas e Cavalos<br>Produzidas especialmente<br>pela Rústicos Nobre!</h2>
     <p>Arte artesanal que celebra a tradição rural brasileira</p>
-    <a href="https://wa.me/5500000000000" class="btn-hero">Faça agora o seu pedido</a>
+    <a href="https://wa.link/zdxqdm" class="btn-hero">Faça agora o seu pedido</a>
   </div>
-  <div class="hero-banner-img">🐎</div>
+  <div class="hero-banner-img" style="position:relative; width:100%; max-width:420px; height:auto; overflow:hidden; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    style="width:100%; height:auto; object-fit:cover; display:block;">
+    
+    <!-- Seu vídeo do repositório -->
+    <source src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/20260122_122414239.mp4_play_BR.mp4" 
+            type="video/mp4">
+    
+    <!-- Fallback (imagem estática caso o vídeo não carregue) -->
+    <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/20260330_094250279.jpg_play_BR.jpg" 
+         alt="Boi Mija Pinga" style="width:100%; height:auto;">
+  </video>
+</div>
+</section>
+<!-- FRETE CORREIOS -->
+<section style="padding:30px 5%; background:#f5f0e8; text-align:center;">
+  
+  <h3 style="color:#1e4d1e; margin-bottom:15px;">
+    Calcule o frete do seu pedido
+  </h3>
+
+  <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+    
+    <a href="https://www2.correios.com.br/sistemas/precosPrazos/" target="_blank"
+      style="background:#1e4d1e; color:#fff; padding:12px 20px; border-radius:8px; font-weight:600;">
+      📦 Calcular Frete
+    </a>
+
+    <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
+      style="background:#c49a2e; color:#fff; padding:12px 20px; border-radius:8px; font-weight:600;">
+      🔎 Não sei meu CEP
+    </a>
+
+  </div>
+
+  <p style="margin-top:10px; font-size:13px; color:#777;">
+    43cm de altura, 17cm de largura e 45cm de comprimento; peso 7 kilos
+  </p>
+
 </section>
 
 <!-- ══════ FEATURES ══════ -->
@@ -248,22 +307,291 @@ footer ul li a:hover{color:#fff;}
   <div class="feat"><div class="fi">🔒</div><h4>Compre sem sair de casa</h4><p>Compra segura e totalmente gerenciada pelo nosso sistema.</p></div>
 </section>
 
+Pode tirar as descrição das imagens e deixar só as imagens
+Pode tirar as descrição das imagens e deixar só as imagens
+
 <!-- ══════ CATÁLOGO ══════ -->
 <section class="catalogo-sec" id="catalogo">
   <div class="sec-head">
-    <h2>Explore a nossa coleção exclusiva de<br>Touros de cachaça esculpidos à mão</h2>
+    <h2>Explore a nossa coleção exclusiva de<br>Boi mija pinga ,túnel de cachaça esculpidos à mão</h2>
     <p>uma obra-prima que combina tradição e arte rural</p>
   </div>
+  
   <div class="owl-carousel owl-theme">
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/1015/500/500" alt="Touro Nelore"></div><div class="prod-body"><h4>Touro Nelore</h4><p>43cm × 45cm • 2L</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/201/500/500" alt="Touro Brahman"></div><div class="prod-body"><h4>Touro Brahman</h4><p>Personalizado</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/237/500/500" alt="Touro Girolando"></div><div class="prod-body"><h4>Touro Girolando</h4><p>Edição Limitada</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/200/500/500" alt="Touro Angus"></div><div class="prod-body"><h4>Touro Angus</h4><p>43cm × 45cm • 2L</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/10/500/500" alt="Touro Senepol"></div><div class="prod-body"><h4>Touro Senepol</h4><p>Edição Especial</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/28/500/500" alt="Touro Guzerá"></div><div class="prod-body"><h4>Touro Guzerá</h4><p>43cm × 45cm • 2L</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/582/500/500" alt="Touro Tabapuã"></div><div class="prod-body"><h4>Touro Tabapuã</h4><p>Personalizado</p></div></div></div>
-    <div class="item"><div class="prod-card"><div class="prod-img"><img src="https://picsum.photos/id/40/500/500" alt="Touro Canchim"></div><div class="prod-body"><h4>Touro Canchim</h4><p>43cm × 45cm • 2L</p></div></div></div>
-    <!-- Adicione mais itens copiando um bloco acima e trocando src e nome -->
+
+    <!-- Item 1 a 30 - todas as suas imagens -->
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392810.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392811.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392812.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Limitada</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392813.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392814.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Especial</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392815.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392816.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392817.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392818.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392819.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Limitada</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439282.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392820.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392821.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392822.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Especial</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392823.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392824.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392825.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392826.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Limitada</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392827.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392828.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392829.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Especial</p></div>
+      </div>
+    </div>
+
+    <!-- Itens 22 a 30 (continuação com os números restantes) -->
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439283.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/2026040114392831.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Limitada</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439284.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439285.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439286.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Artesanal • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439287.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Edição Especial</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439288.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>43cm × 45cm • 2L</p></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604011439289.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Personalizado</p></div>
+      </div>
+    </div>
+
+    <!-- Último item (30) -->
+    <div class="item">
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/20260330_094250279.jpg_play_BR.jpg" alt="Boi Mija Pinga" loading="lazy">
+        </div>
+        <div class="prod-body"><h4>Boi Mija Pinga</h4><p>Modelo Especial</p></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -272,7 +600,7 @@ footer ul li a:hover{color:#fff;}
   <div class="porque-inner">
     <div class="porque-txt">
       <p class="sub">Por que Escolher o</p>
-      <h2>Touro Corote da<br>Rústicos Nobre?</h2>
+      <h2> Boi Corote da<br>Rústicos Nobre?</h2>
       <p>Na Rústicos Nobre, o processo de criação do "Touro Corote" é tão autêntico quanto a própria peça que produzimos.</p>
       <ul class="pq-list">
         <li><strong>Peças Únicas:</strong>Cada "Boi Mija Pinga" é uma peça única, refletindo a autenticidade das tradições agropecuárias.</li>
@@ -280,7 +608,7 @@ footer ul li a:hover{color:#fff;}
         <li><strong>Dimensões Premium:</strong>43cm de altura, 17cm de largura e 45cm de comprimento; capacidade de até 2 litros; base em madeira.</li>
         <li><strong>Detalhes Personalizados:</strong>Personalização completa — cada detalhe pode ser inspirado em um animal real.</li>
       </ul>
-      <a href="https://wa.me/5500000000000" class="btn-verde">Acesse nossa loja e conheça!</a>
+      <a href="loja.html" class="btn-verde">Acesse nossa loja e conheça!</a>
     </div>
     <div class="porque-img">🐂</div>
   </div>
@@ -294,18 +622,18 @@ footer ul li a:hover{color:#fff;}
     <div class="t-card">
       <div class="t-tag">Novas peças</div>
       <h3>Boi Corote</h3>
-      <a href="https://wa.me/5500000000000" class="btn-mini">Compre Agora</a>
+      <a href="https://wa.link/zdxqdm" class="btn-mini">Compre Agora</a>
     </div>
     <div class="t-card">
       <div class="t-tag">Disponível</div>
       <div class="t-num">50</div>
       <div class="t-sub">unidades de pronta entrega</div>
-      <a href="https://wa.me/5500000000000" class="btn-mini">Compre Agora</a>
+      <a href="https://wa.link/zdxqdm" class="btn-mini">Compre Agora</a>
     </div>
     <div class="t-card">
       <div class="t-tag">100% Personalizado</div>
       <h3>Personalize<br>do seu gosto</h3>
-      <a href="https://wa.me/5500000000000" class="btn-mini">Compre Agora</a>
+      <a href="https://wa.link/zdxqdm" class="btn-mini">Compre Agora</a>
     </div>
   </div>
 </section>
@@ -320,19 +648,19 @@ footer ul li a:hover{color:#fff;}
       <div class="step-num">1</div>
       <h3>Fabricação</h3>
       <p>A inspiração surge da conexão com a natureza rural. Organiza-se a parte hidráulica e estrutural com precisão, empregando ferragens para garantir solidez. Molda-se a massa em torno da estrutura.</p>
-      <a href="https://wa.me/5500000000000">Acompanhe de pertinho →</a>
+      <a href="https://wa.link/zdxqdm">Acompanhe de pertinho →</a>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <h3>Personalização</h3>
       <p>Após receber o pedido, esculpimos a peça com precisão. Após a secagem, preparamos para pintura aplicada à mão e finalizamos montando em base de madeira com acessórios especificados.</p>
-      <a href="https://wa.me/5500000000000">Personalize o seu →</a>
+      <a href="https://wa.link/zdxqdm">Personalize o seu →</a>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>Finalização e Envio</h3>
       <p>Após minuciosa inspeção de qualidade, procedemos à embalagem cuidadosa protegendo a peça para transporte seguro, garantindo que chegue ao destino em condições ideais.</p>
-      <a href="https://wa.me/5500000000000">Faça o seu pedido →</a>
+      <a href="https://wa.link/zdxqdm">Faça o seu pedido →</a>
     </div>
   </div>
 </section>
@@ -341,7 +669,19 @@ footer ul li a:hover{color:#fff;}
 <section class="equipe" id="equipe">
   <h2>Conheça nossa equipe</h2>
   <p class="sub">Nossa equipe de profissionais habilidosos e apaixonados é responsável por cada peça única que criamos, celebrando a tradição rural brasileira.</p>
-  <div class="eq-foto">🤝</div>
+  <!-- ══════ EQUIPE ══════ -->
+<section class="equipe" id="equipe">
+  <h2>Conheça nossa equipe</h2>
+  <p class="sub">Nossa equipe de profissionais habilidosos e apaixonados é responsável por cada peça única que criamos, celebrando a tradição rural brasileira.</p>
+  
+  <div class="eq-foto">
+    <img src="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/202604030730261.jpg" 
+         alt="Equipe Rústicos Nobre" 
+         style="width:100%; height:100%; object-fit:cover; border-radius:14px;" 
+         loading="lazy">
+  </div>
+  
+ 
   <div class="eq-feats">
     <div class="eq-f"><h4>Compromisso com a Qualidade</h4><p>Desde a escolha dos materiais até o acabamento final, garantimos que cada peça seja feita com os mais altos padrões de qualidade.</p></div>
     <div class="eq-f"><h4>Personalização e Atendimento</h4><p>Trabalhamos de perto com cada cliente para criar peças que reflitam suas preferências e estilo único.</p></div>
@@ -362,7 +702,7 @@ footer ul li a:hover{color:#fff;}
     </div>
     <div class="faq-item">
       <button class="faq-q">Quais as condições de pagamento? <span class="arr">▾</span></button>
-      <div class="faq-a">Pagamentos à vista via Pix ou Boleto. Há também a possibilidade de dividir em até 10 vezes no Cartão de Crédito.</div>
+      <div class="faq-a">Pagamentos à vista via Pix ,plataforma shoppe e Olx. Há também a possibilidade de dividir em até 10 vezes no Cartão de Crédito,.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Como rastrear minha entrega? <span class="arr">▾</span></button>
@@ -398,7 +738,7 @@ footer ul li a:hover{color:#fff;}
   <div class="footer-grid">
     <div class="f-brand">
       <div class="logo-wrap">
-        <div class="logo-icon" style="font-size:1.8rem;">🐂</div>
+        <div class="https://raw.githubusercontent.com/Waldemylson/boi-mija-pinga/main/image__1_-removebg-preview%20(1).png" style="font-size:1.8rem;">🐂</div>
         <div class="logo-text" style="color:#fff;">Rústicos Nobre<span style="color:rgba(255,255,255,.45);">Arte rural esculpida à mão</span></div>
       </div>
       <p>Inovação no melhor do artesanato agro. Nosso compromisso é oferecer produtos únicos que celebram a tradição rural brasileira.</p>
@@ -422,9 +762,9 @@ footer ul li a:hover{color:#fff;}
     </div>
     <div class="f-contact">
       <h4>Contato</h4>
-      <p>+55 00 9 00000-0000</p>
-      <p><a href="mailto:seuemail@gmail.com" style="color:rgba(255,255,255,.55);">seuemail@gmail.com</a></p>
-      <p style="margin-top:8px;font-size:.74rem;opacity:.4;">Seu Endereço, Cidade - UF</p>
+      <p>+351 939799936</p>
+      <p><a href="mailto:seuemail@gmail.com" style="color:rgba(255,255,255,.55);">rusticosmoveis12@gmail.com</a></p>
+      <p style="margin-top:8px;font-size:.74rem;opacity:.4;">Belém, Castahhal - PA</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -461,6 +801,20 @@ const close=()=>{mn.classList.remove('open');ov.classList.remove('open');}
 hb.addEventListener('click',e=>{e.stopPropagation();mn.classList.toggle('open');ov.classList.toggle('open');});
 ov.addEventListener('click',close);
 mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+</script>
+<script>
+function mostrarOpcoesCompra() {
+  const menu = document.getElementById('opcoesCompra');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Fecha ao clicar fora
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('opcoesCompra');
+  if (!e.target.closest('button')) {
+    menu.style.display = 'none';
+  }
+});
 </script>
 </body>
 </html>
