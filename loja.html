@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo – Rústicos Móveis</title>
+  <title>Catálogo – Rústicos Nobre</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,32 +25,232 @@
       color: var(--dark);
     }
 
-    /* ── NAV ── */
-    nav {
-      background: var(--green);
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 64px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.35);
+    /* ══════════════════════════════════
+       HEADER / NAV  – novo modelo
+    ══════════════════════════════════ */
+    header {
+      background: #fff;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 14px rgba(0,0,0,.13);
     }
-    .nav-logo {
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 72px;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+
+    /* ── Logo ── */
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text .brand {
       font-family: 'Playfair Display', serif;
-      color: #fff; font-size: 1.25rem; font-weight: 700;
-      letter-spacing: .5px; text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.15;
     }
-    .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,.88); text-decoration: none;
-      font-size: .85rem; letter-spacing: .6px; text-transform: uppercase;
-      font-weight: 700; transition: color .2s;
+    .logo-text .tagline {
+      font-size: .72rem;
+      color: var(--gray);
+      letter-spacing: .3px;
+      font-style: italic;
     }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold); color: #fff !important;
-      padding: 8px 18px; border-radius: 4px;
+
+    /* ── Nav desktop ── */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 4px;
+      flex: 1;
+      justify-content: center;
     }
-    .nav-cta:hover { background: #a87820 !important; color: #fff !important; }
+    .nav-desktop > li { position: relative; }
+    .nav-desktop > li > a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      transition: color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .nav-desktop > li > a:hover { color: var(--green); background: rgba(44,95,46,.07); }
+
+    /* Dropdown Categorias */
+    .has-drop > a::after { content: ' ▾'; font-size: .65rem; }
+    .drop-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      min-width: 210px;
+      box-shadow: 0 10px 32px rgba(0,0,0,.14);
+      z-index: 300;
+    }
+    .drop-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: background .15s, color .15s;
+    }
+    .drop-menu a:hover { background: var(--cream); color: var(--green); }
+    .has-drop:hover .drop-menu { display: block; }
+
+    /* ── Header right ── */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* Botão Comprar Agora */
+    .btn-comprar {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 50px;
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .4px;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+      font-family: 'Lato', sans-serif;
+    }
+    .btn-comprar:hover { background: var(--green2); transform: translateY(-1px); }
+
+    /* Dropdown comprar */
+    #opcoesCompra {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 44px; /* to the left of hamburger */
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px 0;
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      z-index: 9999;
+      min-width: 270px;
+    }
+    #opcoesCompra.open { display: block; }
+    #opcoesCompra a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .88rem;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background .15s;
+    }
+    #opcoesCompra a:last-child { border-bottom: none; }
+    #opcoesCompra a:hover { background: var(--cream); }
+
+    /* ── Hambúrguer ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: background .2s;
+    }
+    .hamburger:hover { background: rgba(0,0,0,.06); }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2.5px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ── Mobile nav overlay ── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 72px 0 0 0;
+      background: #fff;
+      z-index: 190;
+      overflow-y: auto;
+      padding: 24px 0 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 16px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      text-decoration: none;
+      letter-spacing: .4px;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s, background .2s;
+    }
+    .mobile-nav a:hover { color: var(--green); background: var(--cream); }
+    .mobile-nav .mob-category-label {
+      padding: 12px 28px 4px;
+      font-size: .72rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .mobile-nav .mob-buy-links { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .mobile-nav .mob-buy-btn {
+      display: block;
+      text-align: center;
+      background: var(--green);
+      color: #fff;
+      padding: 14px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .mobile-nav .mob-buy-btn:hover { background: var(--green2); border-bottom: none; }
 
     /* ── HERO BAND ── */
     .hero {
@@ -123,55 +323,139 @@
     /* ── PRODUCT GRID ── */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    @media (max-width: 700px) {
+      .products-grid { grid-template-columns: 1fr; gap: 20px; }
     }
 
     /* ── PRODUCT CARD ── */
     .product-card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 14px;
       overflow: hidden;
       transition: box-shadow .25s, transform .25s;
       display: flex; flex-direction: column;
     }
     .product-card:hover {
-      box-shadow: 0 12px 40px rgba(44,95,46,.18);
-      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,95,46,.15);
+      transform: translateY(-3px);
     }
 
     /* ── CAROUSEL ── */
-    .carousel { position: relative; overflow: hidden; aspect-ratio: 1; background: #f0ebe0; }
-    .carousel-track {
-      display: flex; transition: transform .4s ease;
-      height: 100%;
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: #f2ede3;
     }
-    .carousel-track img {
-      min-width: 100%; height: 100%; object-fit: cover; flex-shrink: 0;
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform .4s ease;
+      will-change: transform;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .carousel { height: 260px; }
     }
     .carousel-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,.45); color: #fff;
+      background: rgba(0,0,0,.35); color: #fff;
       border: none; cursor: pointer;
-      width: 32px; height: 32px; border-radius: 50%;
-      font-size: 1rem; display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 50%;
+      font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
       opacity: 0; transition: opacity .2s;
-      z-index: 2;
+      z-index: 3;
     }
     .carousel:hover .carousel-btn { opacity: 1; }
-    .carousel-btn.prev { left: 8px; }
-    .carousel-btn.next { right: 8px; }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+    /* dots INSIDE the image */
     .carousel-dots {
-      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 5px;
+      position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 6px; z-index: 3;
     }
     .carousel-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: rgba(255,255,255,.55); cursor: pointer;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.5); cursor: pointer;
+      transition: background .2s, transform .2s;
+      border: 1px solid rgba(255,255,255,.4);
+    }
+    .carousel-dot.active { background: #fff; transform: scale(1.25); }
+    /* cursor pointer on image */
+    .carousel-slide { cursor: zoom-in; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.93);
+      flex-direction: column; align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-track-wrap {
+      width: 100%; max-width: 700px;
+      overflow: hidden; position: relative;
+    }
+    .lightbox-track {
+      display: flex; transition: transform .4s ease;
+      will-change: transform;
+    }
+    .lightbox-slide {
+      min-width: 100%; display: flex;
+      align-items: center; justify-content: center;
+      padding: 0 12px;
+    }
+    .lightbox-slide img {
+      max-width: 100%; max-height: 75vh;
+      object-fit: contain; border-radius: 10px;
+    }
+    .lightbox-dots {
+      display: flex; gap: 8px; margin-top: 18px;
+    }
+    .lightbox-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: rgba(255,255,255,.4); cursor: pointer;
       transition: background .2s;
     }
-    .carousel-dot.active { background: #fff; }
+    .lightbox-dot.active { background: #fff; }
+    .lightbox-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.15); color: #fff;
+      border: none; cursor: pointer;
+      width: 44px; height: 44px; border-radius: 50%;
+      font-size: 1.4rem; display: flex; align-items: center; justify-content: center;
+      z-index: 2; transition: background .2s;
+    }
+    .lightbox-btn:hover { background: rgba(255,255,255,.3); }
+    .lightbox-btn.prev { left: 8px; }
+    .lightbox-btn.next { right: 8px; }
+    .lightbox-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; color: #fff;
+      font-size: 2rem; cursor: pointer; line-height: 1;
+      opacity: .8; transition: opacity .2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-counter {
+      color: rgba(255,255,255,.6); font-size: .85rem; margin-top: 10px;
+    }
 
     /* ── CARD INFO ── */
     .card-info {
@@ -187,11 +471,8 @@
       font-size: 1.2rem; font-weight: 700;
       color: var(--green); margin-bottom: 8px;
     }
-    .card-price {
-      font-size: 1.35rem; font-weight: 700;
-      color: var(--gold); margin-bottom: 16px; margin-top: auto;
-    }
     .btn-buy {
+      margin-top: auto;
       display: block; text-align: center;
       background: var(--green); color: #fff;
       padding: 12px 0; border-radius: 6px;
@@ -379,31 +660,106 @@
       cursor: pointer; color: var(--gray); line-height: 1;
     }
 
-    @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
+    /* ══════════════════════════════════
+       RESPONSIVO
+    ══════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav-desktop { display: none; }
+      .hamburger { display: flex; }
+      #opcoesCompra { right: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 16px; height: 64px; }
+      .logo-text .brand { font-size: 1rem; }
+      .btn-comprar { padding: 9px 14px; font-size: .8rem; }
       .badges { grid-template-columns: 1fr 1fr; }
       .badge { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .hero { padding: 52px 24px 48px; }
       .catalog-section { padding: 40px 20px; }
+      footer { padding: 40px 24px 24px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#">Rústicos  <span>Nobre</span></a>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Catálogo</a></li>
-    <li><a href="#">Equipe</a></li>
-    <li><a href="#">Sobre</a></li>
-    <li><a href="#">Login</a></li>
-    <li><a href="https://wa.me/553598737590" target="_blank">Suporte</a></li>
-    <li><a class="nav-cta" href="#" onclick="openModal(); return false;">Comprar Agora</a></li>
-  </ul>
+<!-- ══════════════════════════════════
+     HEADER
+══════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a class="header-logo" href="#">
+      <img
+        src="https://artesdocampomg.com.br/wp-content/uploads/2024/07/NR-logo.png"
+        onerror="this.style.display='none'"
+        alt="NR Logo"
+      />
+      <div class="logo-text">
+        <span class="brand">Rústicos Nobre</span>
+        <span class="tagline">Arte rural esculpida à mão</span>
+      </div>
+    </a>
+
+    <!-- Nav Desktop -->
+    <ul class="nav-desktop">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li class="has-drop">
+        <a href="#">Categorias</a>
+        <div class="drop-menu">
+          <a href="#boi">🐂&nbsp; Boi Mija</a>
+          <a href="#cavalo">🐴&nbsp; Cavalo Mija</a>
+          <a href="#cabrita">🐐&nbsp; Cabrita Mija Pinga</a>
+        </div>
+      </li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="https://wa.link/zdxqdm" target="_blank">Suporte</a></li>
+    </ul>
+
+    <!-- Right: botão comprar + hambúrguer -->
+    <div class="header-right">
+      <button class="btn-comprar" onclick="toggleComprar(event)">Comprar Agora</button>
+
+      <!-- Dropdown de compra -->
+      <div id="opcoesCompra">
+        <a href="https://br.shp.ee/97mQxAze" target="_blank">🛒 Comprar Boi na Shopee</a>
+        <a href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/boi-mija-pinga-1468488840?utm_medium=shared_link&utm_source=direct" target="_blank">📦 Comprar Boi na OLX</a>
+        <a href="https://br.shp.ee/49J4joY" target="_blank">🐐 Comprar Cabrita na Shopee</a>
+        <a href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/cabrita-mija-pinga-1470220635?utm_medium=shared_link&utm_source=direct" target="_blank">🐐 Comprar Cabrita na OLX</a>
+        <a href="https://wa.link/zdxqdm" target="_blank">💬 Falar no WhatsApp</a>
+        <a href="https://wa.me/351939799936?text=Minha%20chave%20Pix%20%C3%A9%3A%20xtreambr@gmail.com" target="_blank">💰 Pagar com Pix</a>
+      </div>
+
+      <!-- Hambúrguer -->
+      <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.htm">🏠 Home</a>
+  <a href="#catalogo">📋 Catálogo</a>
+  <div class="mob-category-label">Categorias</div>
+  <a href="#boi" style="padding-left:36px">🐂 Boi Mija</a>
+  <a href="#cavalo" style="padding-left:36px">🐴 Cavalo Mija</a>
+  <a href="#cabrita" style="padding-left:36px">🐐 Cabrita Mija Pinga</a>
+  <a href="#equipe">👥 Equipe</a>
+  <a href="#sobre">ℹ️ Sobre</a>
+  <a href="https://wa.link/zdxqdm" target="_blank">💬 Suporte</a>
+  <div class="mob-buy-links">
+    <a class="mob-buy-btn" href="https://br.shp.ee/97mQxAze" target="_blank">🛒 Boi na Shopee</a>
+    <a class="mob-buy-btn" href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/boi-mija-pinga-1468488840?utm_medium=shared_link&utm_source=direct" target="_blank">📦 Boi na OLX</a>
+    <a class="mob-buy-btn" href="https://br.shp.ee/49J4joY" target="_blank">🐐 Cabrita na Shopee</a>
+    <a class="mob-buy-btn" href="https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/decoracoes-para-casa/cabrita-mija-pinga-1470220635?utm_medium=shared_link&utm_source=direct" target="_blank">🐐 Cabrita na OLX</a>
+    <a class="mob-buy-btn" href="https://wa.me/351939799936?text=Minha%20chave%20Pix%20%C3%A9%3A%20xtreambr@gmail.com" target="_blank">💰 Pagar com Pix</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -441,7 +797,7 @@
 </div>
 
 <!-- CATALOG -->
-<section class="catalog-section">
+<section class="catalog-section" id="catalogo">
   <h2>Nosso Catálogo</h2>
   <div class="products-grid" id="productsGrid"></div>
 </section>
@@ -453,66 +809,35 @@
     <p class="faq-subtitle">Confira abaixo as dúvidas mais comuns</p>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Como personalizo um produto?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Como personalizo um produto?<span class="arrow">▾</span></button>
       <div class="faq-a">Todo produto personalizado deve ser consultado com um de nossos especialistas para que toda a personalização esteja de acordo com o gosto do cliente.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Quais as condições de pagamento?
-        <span class="arrow">▾</span>
-      </button>
-      <div class="faq-a">Pagamentos à vista via Pix ou platafirnas shoppe ou Olx. Com a possibilidade de dividir o valor em até 10 vezes no Cartão de Crédito.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">Quais as condições de pagamento?<span class="arrow">▾</span></button>
+      <div class="faq-a">Pagamentos à vista via Pix ou plataformas Shopee ou Olx. Com a possibilidade de dividir o valor em até 10 vezes no Cartão de Crédito.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Como rastrear a minha entrega?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Como rastrear a minha entrega?<span class="arrow">▾</span></button>
       <div class="faq-a">Após embalar o seu pedido, iremos enviar o código de rastreio via WhatsApp ou por e-mail para que possa acompanhar o percurso e entrega do seu pedido.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Consigo pagar online direto?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Consigo pagar online direto?<span class="arrow">▾</span></button>
       <div class="faq-a">Com a nossa loja em funcionamento, você poderá fazer o seu carrinho personalizado e pagar direto no site sem precisar passar por um consultor.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Como faço para realizar a compra?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Como faço para realizar a compra?<span class="arrow">▾</span></button>
       <div class="faq-a">A compra pode ser realizada através das redes sociais falando com um de nossos consultores ou através do site. Também temos outras opções como nossos parceiros dentro da plataforma Shopee e OLX.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Qual é o material do Touro Corote?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Qual é o material do Touro Corote?<span class="arrow">▾</span></button>
       <div class="faq-a">São utilizados materiais como: plástico, borracha, ferro, gesso, tinta a óleo, verniz e cabresto ornamentado com corrente e couro com uma base de madeira Mdf 3/mm.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Quais as medidas?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Quais as medidas?<span class="arrow">▾</span></button>
       <div class="faq-a">43 cm de altura; 17 cm de largura; 45 cm de comprimento; sobre uma base de madeira guajará com 15 cm de largura e 35 cm de comprimento. Armazenamento interno com capacidade de até 2 litros.</div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Como será o processo de entrega?
-        <span class="arrow">▾</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)">Como será o processo de entrega?<span class="arrow">▾</span></button>
       <div class="faq-a">Será enviado via Correios (PAC ou Sedex) ou através de uma transportadora. O cliente também terá a opção de recolher o produto presencialmente com nossa equipe, informando previamente uma data.</div>
     </div>
   </div>
@@ -538,7 +863,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <h2>Rústicos  <span>Nóbre</span></h2>
+      <h2>Rústicos <span>Nóbre</span></h2>
       <p>Inovação no melhor do artesanato agro. Nosso compromisso é oferecer produtos únicos que conectam tradição e arte.</p>
     </div>
     <div class="footer-col">
@@ -546,22 +871,22 @@
       <ul>
         <li><a href="#">Página Inicial</a></li>
         <li><a href="#">Sobre Rústicos Nóbre</a></li>
-        <li><a href="#">Catálogo</a></li>
-        <li><a href="#">Equipe</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#equipe">Equipe</a></li>
         <li><a href="#">Contatos</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Endereço</h4>
-      <address>Belém<br>Casranhal - PA</address>
+      <address>Belém<br>Castanhal - PA</address>
       <br>
       <h4>Contato</h4>
       <p class="phone">+351 939799936</p>
-      <p class="email"><a href="rusticosmoveis12@gmail.com">rusticosmoveis12@gmail.com</a></p>
+      <p class="email"><a href="/cdn-cgi/l/email-protection#a5d7d0d6d1ccc6cad6c8cad3c0ccd69497e5c2c8c4ccc98bc6cac8"><span class="__cf_email__" data-cfemail="0d7f787e79646e627e60627b68647e3c3f4d6a606c6461236e6260">[email&#160;protected]</span></a></p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>Copyright © 2024 Rústicos Nóbre. Todos os direitos reservados </p>
+    <p>Copyright © 2024 Rústicos Nóbre. Todos os direitos reservados</p>
   </div>
 </footer>
 
@@ -569,6 +894,18 @@
 <a class="wa-float" href="https://wa.link/zdxqdm" target="_blank" title="Suporte WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-track-wrap" id="lbWrap">
+    <div class="lightbox-track" id="lbTrack"></div>
+    <button class="lightbox-btn prev" onclick="lbShift(-1)">&#8249;</button>
+    <button class="lightbox-btn next" onclick="lbShift(1)">&#8250;</button>
+  </div>
+  <div class="lightbox-dots" id="lbDots"></div>
+  <div class="lightbox-counter" id="lbCounter"></div>
+</div>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
@@ -605,8 +942,8 @@
   </div>
 </div>
 
-<script>
-// ── PRODUCT DATA ──
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── PRODUCT DATA ── */
 const BASE = 'https://artesdocampomg.com.br/wp-content/uploads/2024/07/';
 const products = [
   { code:'TC-001', name:'Gir Leiteiro',        imgs:['TC-001.jpg','TC-001-3.jpg','TC-001-1.jpg','TC-001-2.jpg'] },
@@ -645,25 +982,22 @@ const products = [
   { code:'TC-040', name:'Tucura',               imgs:['TUCURA-6.jpg','TUCURA-1.jpg','TUCURA-2.jpg','TUCURA-3.jpg','TUCURA-4.jpg','TUCURA-5.jpg'] },
 ];
 
-// ── BUILD CARDS ──
+/* ── BUILD CARDS ── */
 const grid = document.getElementById('productsGrid');
 const carouselStates = {};
 
 products.forEach((p, idx) => {
   carouselStates[idx] = 0;
-
-  const imgTags = p.imgs.map((img, i) =>
-    `<img src="${BASE}${img}" alt="${p.name} ${i+1}" loading="lazy" />`
+  const slideTags = p.imgs.map((img, i) =>
+    `<div class="carousel-slide" onclick="openLightbox(${idx},${i})"><img src="${BASE}${img}" alt="${p.name} ${i+1}" loading="lazy" /></div>`
   ).join('');
-
   const dots = p.imgs.map((_, i) =>
     `<span class="carousel-dot${i===0?' active':''}" onclick="goTo(${idx},${i})"></span>`
   ).join('');
-
   grid.innerHTML += `
     <div class="product-card">
       <div class="carousel" id="c${idx}">
-        <div class="carousel-track" id="track${idx}">${imgTags}</div>
+        <div class="carousel-track" id="track${idx}">${slideTags}</div>
         <button class="carousel-btn prev" onclick="shift(${idx},-1)">&#8249;</button>
         <button class="carousel-btn next" onclick="shift(${idx},1)">&#8250;</button>
         <div class="carousel-dots" id="dots${idx}">${dots}</div>
@@ -671,8 +1005,7 @@ products.forEach((p, idx) => {
       <div class="card-info">
         <p class="card-code">${p.code}</p>
         <h3 class="card-name">${p.name}</h3>
-        <p class="card-price">R$: 1.000,00</p>
-        <a class="btn-buy" href="#" onclick="openModal(); return false;">Compre agora</a>
+        <a class="btn-buy" href="#" onclick="openModal(); return false;">🛒 Compre agora</a>
       </div>
     </div>`;
 });
@@ -686,26 +1019,101 @@ function goTo(idx, pos) {
     d.classList.toggle('active', i===pos);
   });
 }
+function shift(idx, dir) { goTo(idx, carouselStates[idx] + dir); }
 
-function shift(idx, dir) {
-  goTo(idx, carouselStates[idx] + dir);
+/* ── SWIPE SUPPORT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel').forEach(car => {
+    let startX = 0;
+    car.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+    car.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) {
+        const idx = parseInt(car.id.replace('c',''));
+        shift(idx, dx < 0 ? 1 : -1);
+      }
+    });
+  });
+});
+
+/* ── AUTO-ADVANCE ── */
+setInterval(() => { products.forEach((_,i) => shift(i,1)); }, 4500);
+
+/* ── LIGHTBOX ── */
+let lbIdx = 0, lbPos = 0;
+
+function openLightbox(idx, pos) {
+  lbIdx = idx;
+  const p = products[idx];
+  const lbTrack = document.getElementById('lbTrack');
+  const lbDots  = document.getElementById('lbDots');
+  lbTrack.innerHTML = p.imgs.map((img,i) =>
+    `<div class="lightbox-slide"><img src="${BASE}${img}" alt="${p.name} ${i+1}" /></div>`
+  ).join('');
+  lbDots.innerHTML = p.imgs.map((_,i) =>
+    `<span class="lightbox-dot" onclick="lbGoTo(${i})"></span>`
+  ).join('');
+  lbGoTo(pos);
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-
-// ── FAQ ──
-function toggleFaq(btn) {
-  const item = btn.parentElement;
-  item.classList.toggle('open');
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
 }
+function lbGoTo(pos) {
+  const total = products[lbIdx].imgs.length;
+  pos = ((pos % total) + total) % total;
+  lbPos = pos;
+  document.getElementById('lbTrack').style.transform = `translateX(-${pos*100}%)`;
+  document.querySelectorAll('#lbDots .lightbox-dot').forEach((d,i) => d.classList.toggle('active', i===pos));
+  document.getElementById('lbCounter').textContent = `${pos+1} / ${total}`;
+}
+function lbShift(dir) { lbGoTo(lbPos + dir); }
 
-// ── MODAL ──
-function openModal() { document.getElementById('modalOverlay').classList.add('open'); }
+// Swipe no lightbox
+(function(){
+  const wrap = document.getElementById('lbWrap');
+  if (!wrap) return;
+  let sx = 0;
+  wrap.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  wrap.addEventListener('touchend',   e => { const dx = e.changedTouches[0].clientX - sx; if(Math.abs(dx)>40) lbShift(dx<0?1:-1); });
+})();
+
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key==='ArrowRight') lbShift(1);
+  if (e.key==='ArrowLeft')  lbShift(-1);
+  if (e.key==='Escape')     closeLightbox();
+});
+
+/* ── FAQ ── */
+function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }
+
+/* ── MODAL ── */
+function openModal()  { document.getElementById('modalOverlay').classList.add('open'); }
 function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
 function closeModalOutside(e) { if(e.target.id==='modalOverlay') closeModal(); }
 
-// ── AUTO-ADVANCE CAROUSELS ──
-setInterval(() => {
-  products.forEach((_,i) => shift(i,1));
-}, 4500);
+/* ── HAMBURGER / MOBILE NAV ── */
+function toggleMobileNav() {
+  document.getElementById('hamburger').classList.toggle('active');
+  document.getElementById('mobileNav').classList.toggle('open');
+  // fechar dropdown de compra se aberto
+  document.getElementById('opcoesCompra').classList.remove('open');
+}
+
+/* ── DROPDOWN COMPRAR ── */
+function toggleComprar(e) {
+  e.stopPropagation();
+  document.getElementById('opcoesCompra').classList.toggle('open');
+}
+document.addEventListener('click', () => {
+  document.getElementById('opcoesCompra').classList.remove('open');
+});
 </script>
 </body>
 </html>
